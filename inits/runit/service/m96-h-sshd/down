@@ -1,0 +1,3 @@
+#!/bin/sh
+# service disabled via runit
+exit 0

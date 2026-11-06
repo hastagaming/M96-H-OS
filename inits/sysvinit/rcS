@@ -1,0 +1,20 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          boot
+# Required-Start:    $local_fs $network
+# Required-Stop:     $network $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: M96-H-OS SysVInit bootstrap
+### END INIT INFO
+
+log() { echo "[m96-h-init] $*"; }
+
+log "M96-H-OS SysVInit starting"
+
+mount -a 2>/dev/null || true
+for f in /etc/rc.d/rc.local; do
+	[ -e "$f" ] && sh "$f"
+done
+log "SysVInit bootstrap complete"
+exit 0

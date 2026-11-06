@@ -1,0 +1,42 @@
+name: M96-H-OS
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    name: Package M96-H-OS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up version
+        id: version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Create source archive
+        run: |
+          zip -r "M96-H-OS-${{ steps.version.outputs.VERSION }}.zip" . -x "*.git/*" -x ".github/*"
+
+      - name: Unzip source archive
+        run: |
+          unzip -o "M96-H-OS-${{ steps.version.outputs.VERSION }}.zip" -d "M96-H-OS-unpacked"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: M96-H-OS-${{ steps.version.outputs.VERSION }}
+          path: "M96-H-OS-unpacked/**"
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "M96-H-OS-${{ steps.version.outputs.VERSION }}.zip"
+          generate_release_notes: true

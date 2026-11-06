@@ -1,0 +1,7 @@
+Source: m96-h-app-manager
+Section: admin
+Priority: optional
+Maintainer: M96-H Team <m96-h@example.com>
+Architecture: all
+Description: M96-H-OS package manager GUI (tkinter frontend for apt/Flatpak)
+Depends: python3, python3-tk, apt, flatpak, polkit

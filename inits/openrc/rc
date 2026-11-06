@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+# M96-H-OS OpenRC init script
+# installed as /etc/init.d/m96-h-boot
+
+depend() {
+	after net network syslog
+}
+
+start() {
+	# placeholder for M96-H-OS initialization without systemd
+	echo "[m96-h-openrc] starting M96-H-OS"
+}
+
+stop() {
+	echo "[m96-h-openrc] stopping M96-H-OS"
+}

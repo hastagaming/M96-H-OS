@@ -1,0 +1,14 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: m96-h-app-manager
+Source: local
+
+Files: *
+Copyright: 2026, M96-H Team
+License: GPL-3.0+
+License: GPL-3.0+ <https://www.gnu.org/licenses/gpl-3.0.en.html>
+
+License: GPL-3.0+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.

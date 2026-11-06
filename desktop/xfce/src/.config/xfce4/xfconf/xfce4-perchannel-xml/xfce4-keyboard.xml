@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel name="xfce4-keyboard" version="1.0">
+  <property name="KeyMap" type="empty" value="">
+    <property name="KeyboardModel" type="string" value="pc105"/>
+    <property name="KeyboardLayout" type="list" value="us::eng">
+      <listentry name="us"/>
+    </property>
+  </property>
+</channel>

@@ -1,0 +1,6 @@
+# M96-H-OS GRUB theme
+desktop_image /boot/grub/themes/M96-H/background.png
+desktop_color normal = 0x141428,0xE8E8F0
+desktop_color selected = 0x2B1B5C,0x7CFFB2
+terminal_color normal = 0xE8E8F0,0x141428
+terminal_color selected = 0x141428,0x7CFFB2
